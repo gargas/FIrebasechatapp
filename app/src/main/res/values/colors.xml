@@ -1,6 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+        <color name="colorPrimary">#575ab2</color>
+        <color name="colorPrimaryDark">#303F9F</color>
+        <color name="colorAccent">#FF4081</color>
+
+        <color name="white">#FFFFFF</color>
+        <color name="black">#000000</color>
+        <color name="red">#d50000</color>
+        <color name="light_gray">#d3d3d3</color>
+
+        <color name="splash_message_color">#b8b9b8</color>
+        <color name="divider">#c5c7ca</color>
+        <color name="profile_detail_tv_color">#9b9b9b</color>
+        <color name="profile_facebook_tv_color">#3b5998</color>
+        <color name="login_button_unclicked">#ffffff</color>
+        <color name="login_button_clicked">#e6e6e6</color>
+        <color name="sign_up_button_unclicked">#21d38f</color>
+        <color name="sign_up_button_clicked">#1fc786</color>
+
+        <color name="submit_button_unclicked">#21d38f</color>
+        <color name="submit_button_clicked">#1fc786</color>
+
+        <color name="forgot_password_tagline_color">#9b9b9b</color>
+
+        <color name="forgot_password_resend_email_label">#909090</color>
+
+        <color name="transparent_back_clicked_border">#1fc786</color>
+
+        <color name="fb_btn_color">#3B5998</color>
+        <color name="fb_btn_click_color">#FF6792ED</color>
+        <color name="google_btn_color">#D34836</color>
+        <color name="divider_light">#cdcccd</color>
+        <color name="divider_dark">#9e9e9e</color>
+        <color name="profile_name_colour_in_social_setting">#222</color>
+        <color name="profile_google_tv_color">#d34836</color>
+        <color name="google_btn_click_color">#FFED6452</color>
+        <color name="login_line_color">#FAFAFA</color>
+        <color name="login_text_color">#787977</color>
+        <color name="login_tab_indicator_color">#21D38F</color>
+        <color name="login_btn_click_color">#69f4bf</color>
+
+        <color name="trip_title_color">#4a4a4a</color>
+        <color name="trip_desc_color">#804a4a4a</color>
+        <color name="trip_background_color">#f3f7fc</color>
+        <color name="trip_descrip_color">#8697a4</color>
+
+        <color name="dark_purple_color">#745FB4</color>
+        <color name="light_purple_color">#896ed8</color>
+        <color name="voucher_confirm_id">#896ed8</color>
+        <color name="purple_shade">#eee9fd</color>
+        <color name="light_purple_shade">#faf9ff</color>
+        <color name="voucher_backround_color">#4a63e2</color>
+        <color name="voucher_status_backround">#EEF1FD</color>
+        <color name="voucher_class_tv">#afb2be</color>
+        <color name="voucher_deaprture_tv">#c7c7c7</color>
+        <color name="voucher_layover_back">#edf0fd</color>
+        <color name="voucher_activity_confirmation_back">#eee9fd</color>
+        <color name="voucher_tag_color">#a7a7a7</color>
+        <color name="flight_dep_arrival_label">#c7c7c7</color>
+        <color name="flight_dep_arrival_value">#4a63e2</color>
+        <color name="flight_terminal_tv_color">#222</color>
+        <color name="flight_passenger_detail_color">#0c0c0c</color>
+        <color name="hotel_bottom_line_color">#eee</color>
+
+        <color name="light_yellow_color">#ff9600</color>
+        <color name="dark_yellow_color">#D77E00</color>
+        <color name="shade_yellow_color">#FFF4E6</color>
+        <color name="shade_yellow_tv_color">#e9d914</color>
+        <color name="chat_background_main">#f3f7fc</color>
+        <color name="chat_item_text_color">#4a4a4a</color>
+        <color name="chat_item_timing_text_color">#b4b5b6</color>
+        <color name="tool_bar_color">#575ab2</color>
+        <color name="chat_edit_text_line_color">#dfdfdf</color>
+        <color name="chat_is_typing_color">#80FFFFFF</color>
+        <color name="chat_status_bar_color">#4e51a1</color>
+        <color name="forgot_password_status_bar_color">#464a8d</color>
+        <color name="gray">@android:color/darker_gray</color>
+        <color name="green">#34BC4D</color>
+
+        <color name="color_preLoader_start">#b4b5b6</color>
+        <color name="color_preLoader_center">#b4b5b6</color>
+        <color name="color_preLoader_end">#4a63e2</color>
+        <color name="action_bar_color">#585db0</color>
+
+        <color name="flight_time_text_color">#6469B6</color>
+        <color name="flight_date_text_color">#8A9197</color>
+        <color name="destination_background">#222655</color>
+        <color name="flight_label_text_color">#80ffffff</color>
+        <color name="itinerary_activity_timing_color">#666bc6</color>
+        <color name="itinerary_activity_line_background">#c0c0c0</color>
+        <color name="itinerary_vertical_line_background">#dde2e9</color>
+        <color name="itinerary_hotel_heading_color">#222222</color>
+        <color name="itinerary_hotel_text_color">#e9d914</color>
+        <color name="itinerary_hotel_line_color">#c0c0c0</color>
+        <color name="itinerary_hotel_review_text_color">#589442</color>
+        <color name="itinerary_hotel_checkIn_date_color">#ff9603</color>
+        <color name="itinerary_hotel_checkin_time_color">#4b565f</color>
+        <color name="itinerary_hotel_checkout_date_color">#ff9603</color>
+        <color name="itinerary_hotel_checkout_time_color">#4b565f</color>
+        <color name="itinerary_hotel_more_info_color">#848484</color>
+        <color name="itinerary_includes_tv_info_color">#848484</color>
+        <color name="itinerary_includes_text_color">#c8c8c8</color>
+        <color name="itinerary_nights_text_color">#7f7f7f</color>
+        <color name="voucher_hotel_redemption_header_color">#c7c7c7</color>
+        <color name="voucher_hotel_primary_supplier_color">#c7c7c7</color>
+        <color name="voucher_hotel_redemption_detail_color">#4a4a4a</color>
+        <color name="voucher_hotel_primary_supplier_detail_color">#4a4a4a</color>
+        <color name="voucher_hotel_confirmation_id_color">#ff9600</color>
+        <color name="voucher_hotel_background">#fff4e6</color>
+        <color name="voucher_divider_color">#fff4e5</color>
+        <color name="transfer_list_divider">#edf0fd</color>
+        <color name="wallet_secondary_text_holo_dark">#b1bcc5</color>
+
+        <color name="notification_view_background">#e5e9ff</color>
+        <color name="notification_dismiss_color">#595cb3</color>
+        <color name="notification_voucher_view_color">#575ab2</color>
+
+
+        <string-array name="pull_to_refresh_serial_bg">
+            <item>#24c6d5</item>
+            <item>#57dd86</item>
+            <item>#ad7dcf</item>
+            <item>#ff484d</item>
+            <item>#fcba59</item>
+            <item>#24c6d5</item>
+        </string-array>
+        <color name="message_activity_background">#f3f7fc</color>
+        <color name="message_list_item_status_line_color">#e7ebef</color>
+
 </resources>

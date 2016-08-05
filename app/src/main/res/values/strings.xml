@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">FIrebasechatapp</string>
     <string name="action_settings">Settings</string>
+    <string name="send_message_image_view">send message</string>
+    <string name="attachment_image_view">attachment</string>
+    <string name="messenger">Messanger</string>
+    <string name="status_initial_text">typing status</string>
+    <string name="chat_user_image">Chat user image</string>
+    <string name="android">Android</string>
 </resources>
