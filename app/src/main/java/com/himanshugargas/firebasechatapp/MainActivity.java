@@ -12,13 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.firebase.crash.FirebaseCrash;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 import com.himanshugargas.firebasechatapp.adapters.ChatAdapter;
 import com.himanshugargas.firebasechatapp.models.ChatMessage;
 
@@ -33,9 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ChatAdapter adapter;
     private ArrayList<ChatMessage> chatMessageList;
     private FirebaseApp app;
-    private FirebaseAuth auth;
     private FirebaseDatabase database;
-    private FirebaseStorage storage;
     private DatabaseReference databaseRef;
 
     @Override
@@ -44,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FirebaseCrash.report(new Exception("My first Android non-fatal error"));
         recyclerView = (RecyclerView)findViewById(R.id.chat_list_view);
         chatEditText = (EditText) findViewById(R.id.chat_edit_text);
         findViewById(R.id.send_message_layout).setOnClickListener(this);
@@ -53,54 +48,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (chatMessageList==null){
             chatMessageList = new ArrayList<>();
         }
-        adapter = new ChatAdapter(chatMessageList);
+        initialiseFireBase();
+        adapter = new ChatAdapter(ChatMessage.class,R.layout.chat_item_other_layout,ChatAdapter.CustomViewHolder.class,databaseRef);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        initialiseFireBase();
     }
 
     private void initialiseFireBase() {
         app = FirebaseApp.getInstance();
-      //  database = FirebaseDatabase.getInstance(app);
-        auth = FirebaseAuth.getInstance(app);
-        storage = FirebaseStorage.getInstance(app);
-
+        database = FirebaseDatabase.getInstance(app);
         databaseRef = database.getReference("chat");
-
-        databaseRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                ChatMessage chatMessage = dataSnapshot.getValue(ChatMessage.class);
-                if (adapter!=null){
-                    chatMessage.setSelf(false);
-                    if (!chatMessage.getSender().equalsIgnoreCase("nexus 5x"))
-                    adapter.addMessage(chatMessage);
-                    recyclerView.smoothScrollToPosition(chatMessageList.size()-1);
-                }
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
 
     @Override
@@ -145,9 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void sendMessage() {
         String chatmessage = chatEditText.getText().toString();
         if (!TextUtils.isEmpty(chatmessage)) {
-            ChatMessage chatMessage = new ChatMessage(chatmessage,"Nexus 5x", true);
-            adapter.addMessage(chatMessage);
-            recyclerView.smoothScrollToPosition(adapter.getItemCount() - 1);
+            ChatMessage chatMessage = new ChatMessage(chatmessage,"Nexus 6p", true);
+            recyclerView.smoothScrollToPosition(adapter.getItemCount()==0?0:adapter.getItemCount() - 1);
             chatEditText.setText("");
             databaseRef.push().setValue(chatMessage);
         }
